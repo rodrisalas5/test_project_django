@@ -1,0 +1,15 @@
+<h1>Filter By Word</h1>
+
+<form method="GET">{% csrf_token %}
+    <input type="text" id="kword" name="kword" placeholder="Enter the name">
+    <button type="submit">Search</button>
+</form>
+
+<h1>Result</h1>
+
+<ul>
+    {% for e in employee %}
+        <li>{{ e }}</li>
+    {% endfor %}
+        
+</ul>

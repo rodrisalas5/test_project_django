@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block contect %}
+    {% include 'includes/header.html' %}
+    <div class="grid-container">
+        <div class="grid-x">
+            <h1 class="cell">List Departaments</h1>
+            <h1 class="cell">
+                <table>
+                    <tbody>
+                        {% for depart in departaments %}
+                        <tr>
+                            <td>{{depart.name_deparment}}</td>
+                            <td>{{depart.short_name}}</td>
+                            <td><a href="{% url 'person_app:listByDepartment' depart.short_name %}" class="button warning">Show details</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </h1>
+        </div>
+    </div>
+{% endblock contect %}
+

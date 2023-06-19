@@ -1,0 +1,9 @@
+<h1>Add Create View</h1>
+
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+<!-- <label for="test">Test: </label> -->
+<!-- <input type="text" placeholder="Enter text here" class="EnterText"> -->

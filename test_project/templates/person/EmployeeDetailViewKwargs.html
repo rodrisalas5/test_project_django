@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ employee_detail_kwargs.last_name }} {{ employee_detail_kwargs.name }}
+{% endblock title %}
+
+{% block contect %}
+    {% include 'includes/header.html' %}
+    <div class="grid-container align-center">
+        <div class="grid-x">
+            <center>
+                <h1 class="cell">Datails Employee</h1>
+            </center>
+            <div class="cell">
+                <form class="grid-x grid-margin-x align-center" method="POST">{% csrf_token %}
+                    <div class="cell large-4 card" style="width: 300px;">
+                        <div class="card-divider">
+                            {{ employee_detail_kwargs.get_job_display }}
+                        </div>
+                        {% if employee_detail_kwargs.avatar %}
+                            <img src="{{ employee_detail_kwargs.avatar.url }}">
+                        {% else %}
+                            <img src="../../../static/img/anonimous.png">
+                        {% endif %}
+                        <div class="card-section">
+                            <h4>{{ employee_detail_kwargs.name }} {{ employee_detail_kwargs.last_name }}</h4>
+                            <p>{{ employee_detail_kwargs.departament }}</p>
+                            <p><span class="label">Habilidades:</span></p>
+                            <ul class="vertical menu">
+                                {% for h in employee_detail_kwargs.ability.all %}
+                                <li>
+                                    {{ h.ability }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+        </div>
+    </div>
+{% endblock contect %}

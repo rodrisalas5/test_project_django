@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <title>Document</title>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css" crossorigin="anonymous">
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    {% include 'home/common/navbar.html' %}
+
+    <h1 class="test1">Hellow from new templates, with foundation</h1>
+
+    <a class="button">Button</a>
+    
+    <button class="submit success button">Save</button>
+    <button type="button" class="alert button">Delete</button>
+
+</body>
+</html>

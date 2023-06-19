@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Registrar Empleado
+{% endblock title %}
+
+{% block contect %}
+    {% include 'includes/header.html' %}
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">
+            Registrar Empleado
+        </h1>
+        <div>
+            <form class="grid-x grid-margin-x" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+                <div class="cell large-6">
+                    <label >Nombre(s):
+                    <label >{{ form.name }}</1abel>
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label >Apellido(s):
+                    <label >{{ form.last_name }}</1abel>
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label >Trabajo(s):
+                    <label >{{ form.position }}</1abel>
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label >Departamento(s):
+                    <label >{{ form.department }}</1abel>
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label >Habilidades(s):
+                    <label >{{ form.ability }}</1abel>
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label >Avatar(s):
+                    <label >{{ form.avatar }}</1abel>
+                    </label>
+                </div>
+                <div class="cell">
+                    <button type="submit" class="success button">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock contect %}
